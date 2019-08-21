@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_register_payments_inherit_form_view" model="ir.ui.view">
+            <field name="name">account.payment</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='journal_id']" position="after">
+                       <field name="remaining_amt_currency"/>
+                       <field name="remaining_amt" widget="monetary" options="{'currency_field': 'remaining_amt_currency'}"/>
+                    </xpath>
+                     <xpath expr="//field[@name='payment_difference']" position="replace">
+                        <field name="payment_difference"/>
+                   </xpath>                  
+                </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  	<record id="group_account_custom_group" model="res.groups">
+        <field name="name">Account User</field>
+    </record>
+    <delete model="ir.rule" id="ESCO_account.restict_accont_user_vendor_payment"/>
+
+   <data noupdate="0">
+    <record id="restict_accont_user_vendor_payment" model="ir.rule">
+        <field name="name">Vendor Payment Restrict</field>
+        <field name="model_id" ref="account.model_account_payment"/>
+        <field name="domain_force"> [('payment_type','!=','outbound')]</field>
+        <field name="groups" eval="[(4, ref('group_account_custom_group'))]"/>
+        <field name="groups" eval="[(6, 0, [ref('group_account_custom_group')])]"/>
+
+	</record>
+</data>
+</odoo>

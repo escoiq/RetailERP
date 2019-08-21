@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_person_target_user,access.sales.person.target.user,model_sales_dashboard,sales_team.group_sale_salesman,1,0,0,0
+access_sales_person_target_manager,access.sales.person.target.manager,model_sales_dashboard,sales_team.group_sale_manager,1,1,1,1
+access_daily_sale_report_user,access_daily_sale_report_user,model_daily_sale_report,sales_team.group_sale_salesman,1,0,0,0
+access_daily_sale_report_manager,access_daily_sale_report_manager,model_daily_sale_report,sales_team.group_sale_manager,1,1,1,1

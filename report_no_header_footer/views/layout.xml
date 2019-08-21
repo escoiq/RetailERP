@@ -1,0 +1,11 @@
+<odoo>
+    <template id="external_layout_standard_extend" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@class='header']" position="replace">
+
+        </xpath>
+        <xpath expr="//div[@class='footer o_standard_footer']" position="replace">
+
+        </xpath>
+    </template>
+
+</odoo>
