@@ -27,7 +27,7 @@ This module will be very useful for those who are still using v7/v8 because of t
     'website': 'http://www.steigendit.com',
     'category': 'Accounting &amp; Finance',
     'version': '11.0.1.6.0',
-    'depends': ['account'],
+    'depends': ['account', 'l10n_multilang'],
     'data': [
         'security/account_parent_security.xml',
         'views/account_view.xml',
