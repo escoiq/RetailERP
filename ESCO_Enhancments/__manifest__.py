@@ -9,7 +9,7 @@
         Customer total invoice paid , due invoice on customer/vendor list view
     ''',
     'website': 'https://www.escoiq.com',
-    'depends': ['sale','account','stock', 'ESCO_ReTail_Reports'],
+    'depends': ['sale','account','stock','ESCO_ReTail_Reports'],
     'data': [
         'security/security.xml',
         'views/res_partner_inherit.xml',
