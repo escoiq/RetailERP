@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_retail_report_config_setting" model="ir.ui.view">
+            <field name="name">sale.retail.report.config.settings.form</field>
+            <field name="model">sale.retail.report.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="odooApp Customize Settings" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel" class="oe_link" special="cancel"/>
+                    </header>
+                    <h2>Retail Sale Report</h2>
+                        <group string="Report Menu">
+                            <field name="hide_show_menu"/>
+                        </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_Sale_report_config" model="ir.actions.act_window">
+            <field name="name">ESCO Setting</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.retail.report.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem
+                id="menu_esco_setting"
+                name="ESCO Setting"
+                parent="base.menu_administration"
+                sequence="2"
+                action="action_Sale_report_config"
+                groups="base.group_system"/>
+      
+        <menuitem
+            id="base_setup.menu_config"
+            name="General Settings"
+            parent="base.menu_administration"
+            sequence="3"
+            action="base_setup.action_general_configuration"
+            groups="base.group_system"/>
+
+        <menuitem
+                id="base.menu_app_group"
+                name="odooApp"
+                parent="base.menu_administration"
+                sequence="4"
+                groups="base.group_system"/>
+    </data>
+</odoo>

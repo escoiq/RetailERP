@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_retail_report_partner_enahnce" model="ir.ui.view">
+            <field name="name">sale.retail.report.config.settings.form</field>
+            <field name="model">sale.retail.report.config.settings</field>
+            <field name="inherit_id" ref="ESCO_ReTail_Reports.sale_retail_report_config_setting"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                     <h2>Enhance Field</h2>
+                        <group string="Total Invoice &amp; Due Amonut">
+                            <field name="show_enhancement"/>
+                        </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
