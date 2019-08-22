@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'Report',
+    'name': 'ESCO Report',
     'version': '1.0',
     'author': 'Sachin Kotak',
     'category': '',
