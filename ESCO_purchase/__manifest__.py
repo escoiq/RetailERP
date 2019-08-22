@@ -9,7 +9,7 @@
         
     ''',
     'website': 'mitesh4829@gmail.com',
-    'depends': ['product','purchase','account','web'],
+    'depends': ['product','purchase','product_brand','account','web'],
     'data': [
         'security/ir.model.access.csv',
 #         'security/security.xml',
