@@ -5,6 +5,8 @@ from odoo import api, fields, models, tools, _
 class SaleCustomReport(models.Model):
     _name = "sale.custom.report"
     _rec_name = "sequance"
+    _description = "Sale Retial Report"
+
 
     @api.one 
     def _get_profit_val(self):
@@ -24,7 +26,7 @@ class SaleCustomReport(models.Model):
     sale_order_id = fields.Many2one('sale.order')
     sale_order_date = fields.Datetime(string="Order Date",related="sale_order_id.confirmation_date",store=True)
     date_order = fields.Datetime(string="Date Order",related="sale_order_id.date_order",store=True)
-    sale_order_name = fields.Char(string="Sale Order",related="sale_order_id.name")
+    sale_order_name = fields.Char(string="Sale Order Name",related="sale_order_id.name")
     product_id = fields.Many2one('product.product',string="Product Name")
     categ_id = fields.Many2one('product.category',related="product_id.categ_id",store=True)
     barcode = fields.Char(related="product_id.barcode",string="Barcode")
