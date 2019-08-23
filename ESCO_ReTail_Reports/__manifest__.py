@@ -8,7 +8,7 @@
     'description': '''
         Custom Rrport module
     ''',
-    'depends': ['account','sale','base_setup'],
+    'depends': ['account','sale','base_setup','stock'],
     'data': [
         'data/service_cron_reverse.xml',
         'security/ir.model.access.csv',
