@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_retail_report_inherit_custom_account" model="ir.ui.view">
+            <field name="name">sale.retail.config.form</field>
+            <field name="model">sale.retail.config</field>
+            <field name="inherit_id" ref="esco_retail_reports.sale_retail_report_config_setting"/>
+            <field name="priority">18</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                     <h2>Account User</h2>
+                        <group string="Restict User">
+                            <field name="restict_account_user"/>
+                        </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
