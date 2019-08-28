@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sales_order_filter_brand" model="ir.ui.view">
+        <field name="name">sale.order.list.select</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']" position="after">
+                <field name="order_line" string="Brand" filter_domain="[('order_line.product_brand_id', 'ilike', self)]"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="account_bank_statement_import.journal_dashboard_view_inherit" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.kanban.inherit</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr='//div[@name="bank_cash_commands"]' position="before">
+                <div t-if="journal_type == 'bank'">
+                    <a type="object" name="import_statement">Import Statement</a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
