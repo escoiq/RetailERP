@@ -11,11 +11,13 @@ class StockQuant(models.Model):
     _inherit = "stock.quant"
     
     product_brand_id = fields.Many2one(related="product_id.product_brand_id", string="Brand", store=True)
+    manufacturing_of_country = fields.Many2one('res.country',string="Manufacturing Of Country")
 
 
 class StockInventoryLine(models.Model):
     _inherit = "stock.inventory.line"
 
     product_brand_id = fields.Many2one(related="product_id.product_brand_id", string="Brand", store=True)
-    
+    manufacturing_of_country = fields.Many2one('res.country',string="Manufacturing Of Country")
+   
     

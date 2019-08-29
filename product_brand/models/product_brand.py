@@ -12,6 +12,7 @@ from odoo import api, fields, models
 class ProductBrand(models.Model):
     _name = 'product.brand'
     _order = 'name'
+    _description = 'Product Brand'
 
     name = fields.Char('Brand Name', required=True)
     description = fields.Text('Description', translate=True)
@@ -48,27 +49,13 @@ class ProductTemplate(models.Model):
         help='Select a brand for this product'
     )
     brand_name = fields.Char(related='product_brand_id.name', string="Brand Name", store=True)
+    manufacturing_of_country = fields.Many2one('res.country',string="Manufacturing Of Country")
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
 
     brand_name = fields.Char(related='product_brand_id.name', string="Brand Name", store=True)
     
-# class ProductProduct(models.Model):
-#     _inherit = 'product.product'
-#     @api.model
-#     def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
-#         print (">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.name ", name)
-#         if not args:
-#             args = [['brand_name', 'ilike', name]]
-#         else:
-#             args += [['brand_name', 'ilike', name]]
-#         res = super(ProductProduct, self)._name_search( name, args=args, operator=operator, limit=limit, name_get_uid=name_get_uid)
-#
-#         print ("res-----------args--",args)
-#         print ("res-------------",res)
-#         return res
-
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 

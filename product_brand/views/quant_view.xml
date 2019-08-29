@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
         	<xpath expr="//filter[@name='Lot_Serial_number']" position="after">
         		<filter string='Brand' name="brand_group" context="{'group_by': 'product_brand_id'}"/>
+                <filter string='Manufacturing Of Country' name="brand_group" context="{'group_by': 'manufacturing_of_country'}"/>
         	</xpath>
         </field>
     </record>
@@ -18,6 +19,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='line_ids']/tree//field[@name='product_id']" position="after">
         		<field string='Brand' name="product_brand_id"/>
+                <field name="manufacturing_of_country"/>
         	</xpath>
         </field>
     </record>
